@@ -26,7 +26,7 @@ const SectionDesignCocina = () => {
                 Planificación precisa para una cocina industrial eficiente y
                 funcional
               </p>
-              <button className="px-3 py-2 rounded text-white bg-blue-950">
+              <button className="max-w-max px-3 py-2 rounded text-white bg-blue-950">
                 Ver más
               </button>
             </div>
@@ -46,7 +46,7 @@ const SectionDesignCocina = () => {
               <p className="text-xl">
                 Transforma tu cocina con diseños innovadores y funcionales
               </p>
-              <button className="px-3 py-2 rounded text-white bg-blue-950">
+              <button className="max-w-max px-3 py-2 rounded text-white bg-blue-950">
                 Ver más
               </button>
             </div>
@@ -69,7 +69,7 @@ const SectionDesignCocina = () => {
                 Cocinas industriales personalizadas para satisfacer todas tus
                 necesidades
               </p>
-              <button className="px-3 py-2 rounded text-white bg-blue-950">
+              <button className="max-w-max px-3 py-2 rounded text-white bg-blue-950">
                 Ver más
               </button>
             </div>
