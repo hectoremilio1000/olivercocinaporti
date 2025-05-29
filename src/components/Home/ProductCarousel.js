@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 const products = [
   {
     id: 1,
@@ -10,8 +11,8 @@ const products = [
     price: 9668,
     oldPrice: 9968,
     images: [
-      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_IC-132-INTERIOR_-_Arvizu_Group.jpg?v=1525902317&width=720", // primary
-      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_IC-132-INTERIOR_-_Arvizu_Group.jpg?v=1525902317&width=720", // secondary
+      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_TURBO-30-5Q_-_HD_Arvizu_Group.jpg?v=1525816141&width=720",
+      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_TURBO-30-5Q-HD-CANASTA_-_Arvizu_Group.jpg?v=1525816141&width=720",
     ],
   },
   {
@@ -33,7 +34,10 @@ const products = [
     brand: "CORIAT",
     price: 25390,
     oldPrice: 25690,
-    images: ["/img/fryer.png", "/img/fryer-alt.png"],
+    images: [
+      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_TURBO-30-5Q_-_HD_Arvizu_Group.jpg?v=1525816141&width=720",
+      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_TURBO-30-5Q-HD-CANASTA_-_Arvizu_Group.jpg?v=1525816141&width=720",
+    ],
   },
   {
     id: 4,
@@ -42,9 +46,39 @@ const products = [
     brand: "CORIAT",
     price: 36223,
     oldPrice: 36723,
-    images: ["/img/range.png", "/img/range-alt.png"],
+    images: [
+      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_TURBO-30-5Q_-_HD_Arvizu_Group.jpg?v=1525816141&width=720",
+      "https://www.arvizugroup.com/cdn/shop/products/Coriat_-_TURBO-30-5Q-HD-CANASTA_-_Arvizu_Group.jpg?v=1525816141&width=720",
+    ],
   },
 ];
+const NextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-0 top-1/2 -translate-y-1/2 z-20
+                 rounded-full bg-blue-600 p-2 shadow-lg
+                 transition hover:scale-110"
+    >
+      <ChevronRight className="h-6 w-6 text-white" />
+    </button>
+  );
+};
+
+const PrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-20
+                 rounded-full bg-blue-600 p-2 shadow-lg
+                 transition hover:scale-110"
+    >
+      <ChevronLeft className="h-6 w-6 text-white" />
+    </button>
+  );
+};
 
 const sliderSettings = {
   arrows: true,
@@ -53,6 +87,8 @@ const sliderSettings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
   responsive: [
     {
       breakpoint: 1280,
@@ -97,7 +133,7 @@ const ProductCard = ({ product }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          onMouseOver={toggleImage}
+          // onMouseOver={toggleImage}
           className="h-64 w-full object-contain bg-gray-50 rounded-lg shadow-inner"
         />
       </div>

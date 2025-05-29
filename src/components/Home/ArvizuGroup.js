@@ -4,7 +4,7 @@ const ArvizuGroup = () => {
   return (
     <div className="py-12">
       <div className="max-w-6xl mx-auto flex flex-col gap-4">
-        <div className="w-full grid grid-cols-2 gap-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="w-full">
             <img
               className="bg-gray-400 w-full h-[350px] object-cover"
@@ -14,10 +14,10 @@ const ArvizuGroup = () => {
           </div>
           <div className="w-full px-8 py-8 bg-gray-100 text-blue-950 flex items-center">
             <div className="flex flex-col gap-4">
-              <h1 className="text-4xl font-bold">
+              <h1 className="text-2xl md:text-4xl font-bold">
                 Arvizu Group es una empresa mexicana
               </h1>
-              <p className="text-xl">
+              <p className="text-sm md:text-xl">
                 Fabricamos proyectos de cocina a la medida, refrigeración,
                 cocción y hornos. Tenemos presencia en toda la república
                 mexicana.
