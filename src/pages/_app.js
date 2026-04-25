@@ -1,7 +1,23 @@
 import "@/styles/globals.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Geist, Geist_Mono } from "next/font/google";
+import MainLayout from "@/components/Layout/MainLayout";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <div className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+    </div>
+  );
 }
