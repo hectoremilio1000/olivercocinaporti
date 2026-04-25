@@ -8,10 +8,12 @@ export default function ContactForm() {
   const [form, setForm] = useState({ nombre: "", empresa: "", email: "", telefono: "", tipo: "", etapa: "", mensaje: "" });
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
+  const [serverError, setServerError] = useState(null);
 
   const update = (field, value) => {
     setForm((p) => ({ ...p, [field]: value }));
     if (errors[field]) setErrors((p) => ({ ...p, [field]: null }));
+    if (serverError) setServerError(null);
   };
 
   const validate = () => {
@@ -29,8 +31,26 @@ export default function ContactForm() {
     const v = validate();
     if (Object.keys(v).length > 0) { setErrors(v); return; }
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("success");
+    setServerError(null);
+    try {
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await resp.json();
+      if (!resp.ok) {
+        if (data.errors) setErrors(data.errors);
+        else setServerError(data.error || "No pudimos enviar tu solicitud. Intenta de nuevo.");
+        setStatus("idle");
+        return;
+      }
+      setStatus("success");
+    } catch (err) {
+      console.error(err);
+      setServerError("No pudimos conectar con el servidor. Intenta de nuevo o escríbenos por WhatsApp.");
+      setStatus("idle");
+    }
   };
 
   if (status === "success") {
@@ -47,11 +67,11 @@ export default function ContactForm() {
   const labelCls = "block text-sm font-semibold text-[var(--neutral-700)] mb-1.5";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label className={labelCls}>Nombre completo <span className="text-red-500">*</span></label>
-          <input type="text" value={form.nombre} onChange={(e) => update("nombre", e.target.value)} className={inputCls("nombre")} placeholder="Tu nombre" />
+          <input type="text" value={form.nombre} onChange={(e) => update("nombre", e.target.value)} className={inputCls("nombre")} placeholder="Tu nombre" required />
           {errors.nombre && <p className="mt-1 text-xs text-red-500 flex items-center gap-1"><AlertCircle size={12} /> {errors.nombre}</p>}
         </div>
         <div>
@@ -62,19 +82,19 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label className={labelCls}>Email <span className="text-red-500">*</span></label>
-          <input type="email" value={form.email} onChange={(e) => update("email", e.target.value)} className={inputCls("email")} placeholder="tu@correo.com" />
+          <input type="email" value={form.email} onChange={(e) => update("email", e.target.value)} className={inputCls("email")} placeholder="tu@correo.com" required />
           {errors.email && <p className="mt-1 text-xs text-red-500 flex items-center gap-1"><AlertCircle size={12} /> {errors.email}</p>}
         </div>
         <div>
           <label className={labelCls}>Teléfono / WhatsApp <span className="text-red-500">*</span></label>
-          <input type="tel" value={form.telefono} onChange={(e) => update("telefono", e.target.value)} className={inputCls("telefono")} placeholder="55 0000 0000" />
+          <input type="tel" value={form.telefono} onChange={(e) => update("telefono", e.target.value)} className={inputCls("telefono")} placeholder="55 0000 0000" required />
           {errors.telefono && <p className="mt-1 text-xs text-red-500 flex items-center gap-1"><AlertCircle size={12} /> {errors.telefono}</p>}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label className={labelCls}>Tipo de proyecto <span className="text-red-500">*</span></label>
-          <select value={form.tipo} onChange={(e) => update("tipo", e.target.value)} className={inputCls("tipo")}>
+          <select value={form.tipo} onChange={(e) => update("tipo", e.target.value)} className={inputCls("tipo")} required>
             <option value="">Selecciona…</option>
             {PROJECT_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
@@ -92,6 +112,11 @@ export default function ContactForm() {
         <label className={labelCls}>Mensaje</label>
         <textarea rows={4} value={form.mensaje} onChange={(e) => update("mensaje", e.target.value)} className={inputCls("mensaje")} placeholder="Cuéntanos brevemente sobre tu proyecto…" />
       </div>
+      {serverError && (
+        <div className="px-4 py-3 rounded border border-red-300 bg-red-50 text-sm text-red-700 flex items-start gap-2">
+          <AlertCircle size={16} className="flex-shrink-0 mt-0.5" /> {serverError}
+        </div>
+      )}
       <button type="submit" disabled={status === "submitting"} className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 rounded font-semibold bg-[var(--oliver-navy)] text-white hover:bg-[var(--oliver-navy-deep)] disabled:opacity-60 transition-colors">
         {status === "submitting" ? "Enviando…" : (<>Enviar solicitud de cotización <Send size={18} /></>)}
       </button>
