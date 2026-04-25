@@ -15,7 +15,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Cerrar menu mobile con tecla Escape
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
@@ -32,7 +31,9 @@ export default function Header() {
       <header className={`sticky top-0 z-40 bg-white transition-shadow ${scrolled ? "shadow-md" : "shadow-sm"}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-6 py-3">
           <Link href="/" className="flex items-center gap-3" aria-label={SITE.name}>
-            <Image src="/logo-oliver.jpg" alt={SITE.name} width={48} height={48} className="rounded-full object-contain" priority />
+            <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-[var(--oliver-navy)]/10 bg-white flex-shrink-0">
+              <Image src="/logo-oliver.jpg" alt={SITE.name} fill sizes="48px" className="object-cover" priority />
+            </div>
             <span className="hidden sm:block font-bold text-[var(--oliver-navy)] text-lg leading-tight">
               {SITE.shortName}
               <span className="block text-[10px] font-normal tracking-widest text-[var(--oliver-blue)] uppercase">cocina por ti</span>
@@ -59,15 +60,15 @@ export default function Header() {
 
       {open && (
         <>
-          <button
-            type="button"
-            aria-label="Cerrar menú"
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 bg-black/50 z-40 cursor-default"
-          />
+          <button type="button" aria-label="Cerrar menú" onClick={() => setOpen(false)} className="fixed inset-0 bg-black/50 z-40 cursor-default" />
           <aside className="fixed top-0 right-0 h-full w-80 bg-white z-50 shadow-xl flex flex-col" role="dialog" aria-modal="true" aria-label="Menú de navegación">
             <div className="flex items-center justify-between p-4 border-b border-[var(--neutral-200)]">
-              <span className="font-bold text-[var(--oliver-navy)]">Menú</span>
+              <div className="flex items-center gap-2">
+                <div className="relative w-9 h-9 rounded-full overflow-hidden bg-white">
+                  <Image src="/logo-oliver.jpg" alt="" fill sizes="36px" className="object-cover" />
+                </div>
+                <span className="font-bold text-[var(--oliver-navy)]">Menú</span>
+              </div>
               <button onClick={() => setOpen(false)} aria-label="Cerrar menú" className="p-1">
                 <X size={24} />
               </button>
