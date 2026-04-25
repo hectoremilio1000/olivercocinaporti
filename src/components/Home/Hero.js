@@ -8,7 +8,7 @@ import { METRICS } from "@/data/services";
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[var(--oliver-navy-deep)] text-white">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
         <Image
           src={IMAGES.heroBackground}
           alt=""
