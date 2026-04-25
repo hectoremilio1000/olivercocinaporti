@@ -11,15 +11,15 @@ ${urls.map((u) => `  <url>
 </urlset>`;
 }
 
+// SSR con cache de 24h para reducir cost en Vercel (CDN cachea respuesta).
 export async function getServerSideProps({ res }) {
   const urls = NAV_ITEMS.map((n) => `${SITE.url}${n.href}`);
   const sitemap = generateSiteMap(urls);
   res.setHeader("Content-Type", "text/xml");
+  res.setHeader("Cache-Control", "public, s-maxage=86400, stale-while-revalidate=43200");
   res.write(sitemap);
   res.end();
   return { props: {} };
 }
 
-export default function Sitemap() {
-  return null;
-}
+export default function Sitemap() { return null; }
