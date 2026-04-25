@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Hero from "@/components/Home/Hero";
 import PillarsGrid from "@/components/Home/PillarsGrid";
+import ProcessTimeline from "@/components/Home/ProcessTimeline";
+import ServicesGrid from "@/components/Home/ServicesGrid";
 import { SITE } from "@/data/site";
 
 export default function HomePage() {
@@ -12,6 +14,8 @@ export default function HomePage() {
       </Head>
       <Hero />
       <PillarsGrid />
+      <ProcessTimeline />
+      <ServicesGrid />
     </>
   );
 }
