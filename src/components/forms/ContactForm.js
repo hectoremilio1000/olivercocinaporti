@@ -33,7 +33,7 @@ export default function ContactForm() {
     setStatus("submitting");
     setServerError(null);
     try {
-      const resp = await fetch("/api/contact", {
+      const resp = await fetch("https://oliverbackendadonis-production.up.railway.app/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
