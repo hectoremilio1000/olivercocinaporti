@@ -10,9 +10,9 @@ export const SITE = {
 };
 
 export const CONTACT = {
-  phone: "+52 55 0000 0000",
-  phoneRaw: "525500000000",
-  whatsapp: "525500000000",
+  phone: "+52 55 5072 9884",
+  phoneRaw: "525550729884",
+  whatsapp: "525550729884",
   whatsappMessage: "Hola, me interesa cotizar una cocina industrial",
   email: "ventas@olivercocinaporti.com",
   address: "Ciudad de México · Cobertura nacional",
