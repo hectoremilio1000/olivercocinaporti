@@ -2,11 +2,11 @@
 
 :root {
   /* Oliver brand palette */
-  --oliver-navy:        #082947;
-  --oliver-navy-deep:   #051a2e;
-  --oliver-navy-soft:   #0e3a63;
-  --oliver-blue:        #1e5a8c;
-  --oliver-blue-light:  #2d7ab8;
+  --oliver-navy:        #2563A8;
+  --oliver-navy-deep:   #1B4F8A;
+  --oliver-navy-soft:   #5B9BD5;
+  --oliver-blue:        #1F6FB5;
+  --oliver-blue-light:  #B8D4E8;
 
   /* Neutros */
   --neutral-50:  #fafafa;
