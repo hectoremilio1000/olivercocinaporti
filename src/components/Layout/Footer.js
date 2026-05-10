@@ -53,7 +53,7 @@ export default function Footer() {
             <li><a href={`tel:${CONTACT.phoneRaw}`} className="hover:text-white">{CONTACT.phone}</a></li>
             <li><a href={`mailto:${CONTACT.email}`} className="hover:text-white">{CONTACT.email}</a></li>
             <li>{CONTACT.hours}</li>
-            <li><a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white"><FaWhatsapp /> WhatsApp directo</a></li>
+            <li><a href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white"><FaWhatsapp /> WhatsApp directo</a></li>
           </ul>
         </div>
       </div>

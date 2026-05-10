@@ -23,7 +23,7 @@ export default function ContactSection() {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center"><FaWhatsapp size={18} /></div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-[var(--neutral-500)] mb-1">WhatsApp</p>
-                <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-[var(--oliver-navy)] font-semibold hover:underline">Chat directo</a>
+                <a href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="text-[var(--oliver-navy)] font-semibold hover:underline">Chat directo</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
