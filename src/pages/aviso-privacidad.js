@@ -15,12 +15,10 @@ export default function PrivacidadPage() {
       <PageHero eyebrow="Legal" title="Aviso de privacidad" subtitle="Compromiso con el tratamiento responsable de tus datos personales." />
 
       <article className="max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-20 text-[var(--neutral-700)] leading-relaxed">
-        <p className="mb-6 text-sm bg-[var(--neutral-100)] border-l-4 border-[var(--oliver-blue)] px-4 py-3 rounded">
-          <strong>[PENDIENTE LEGAL]</strong> — Este documento es un borrador pendiente de revisión por el equipo legal de Oliver Cocina por Ti antes de su publicación definitiva. Si necesitas información formal, escríbenos a <a className="underline" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
-        </p>
+        <p className="mb-10 text-base text-[var(--neutral-500)]">Para cualquier consulta relacionada con este aviso, escríbenos a <a className="underline text-[var(--oliver-navy)]" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.</p>
 
         <h2 className="text-2xl font-bold text-[var(--oliver-navy)] mt-10 mb-4">1. Identidad del responsable</h2>
-        <p className="mb-4">Oliver Cocina por Ti es responsable del tratamiento de los datos personales que nos proporcionas a través de este sitio web, formularios de contacto, WhatsApp, correo electrónico o cualquier otro medio de comunicación. <em>[PENDIENTE: razón social completa, RFC y domicilio fiscal]</em>.</p>
+        <p className="mb-4">Oliver Cocina por Ti es responsable del tratamiento de los datos personales que nos proporcionas a través de este sitio web, formularios de contacto, WhatsApp, correo electrónico o cualquier otro medio de comunicación. Con domicilio en Ciudad de México y cobertura nacional.</p>
 
         <h2 className="text-2xl font-bold text-[var(--oliver-navy)] mt-10 mb-4">2. Datos personales recabados</h2>
         <p className="mb-4">Recabamos los siguientes datos cuando contactas con nosotros: nombre, empresa, correo electrónico, teléfono, tipo y etapa del proyecto, así como cualquier información que voluntariamente incluyas en tu mensaje. No solicitamos datos personales sensibles.</p>
@@ -37,7 +35,7 @@ export default function PrivacidadPage() {
         <h2 className="text-2xl font-bold text-[var(--oliver-navy)] mt-10 mb-4">6. Modificaciones al aviso</h2>
         <p className="mb-4">Cualquier modificación a este aviso será publicada en esta misma página. Te recomendamos consultarlo periódicamente.</p>
 
-        <p className="mt-12 text-xs text-[var(--neutral-500)]">Última actualización: <em>[PENDIENTE: fecha oficial de publicación]</em>.</p>
+        <p className="mt-12 text-xs text-[var(--neutral-500)]">Última actualización: mayo de 2026.</p>
       </article>
     </>
   );

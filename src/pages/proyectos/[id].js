@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, MapPin, Calendar, Building2, Target, Wrench, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin, Calendar, Building2, Target, Wrench, CheckCircle2, Quote } from "lucide-react";
 import PageHero from "@/components/pages-sections/PageHero";
 import CTAButton from "@/components/shared/CTAButton";
 import { SITE, CONTACT } from "@/data/site";
@@ -153,8 +153,24 @@ export default function ProjectDetailPage({ project, related }) {
         </section>
       )}
 
+      {/* Testimonial */}
+      {project.testimonial && project.testimonial.quote && (
+        <section className="bg-white">
+          <div className="max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24">
+            <Quote size={40} className="text-[var(--oliver-blue)] mb-6" />
+            <blockquote className="text-xl lg:text-2xl text-[var(--neutral-700)] leading-relaxed font-medium mb-8">
+              {project.testimonial.quote}
+            </blockquote>
+            <footer className="text-sm text-[var(--neutral-500)]">
+              <p className="font-bold text-[var(--oliver-navy)] text-base">{project.testimonial.author}</p>
+              <p>{project.testimonial.role} · {project.testimonial.company}</p>
+            </footer>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
-      <section className="bg-white">
+      <section className="bg-[var(--neutral-100)]">
         <div className="max-w-4xl mx-auto px-4 lg:px-6 py-16 lg:py-24 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--oliver-navy)] mb-4">¿Buscas algo similar para tu operación?</h2>
           <p className="text-lg text-[var(--neutral-700)] mb-10 max-w-2xl mx-auto">Cuéntanos de tu proyecto. Te respondemos con propuesta inicial en menos de 24 horas hábiles.</p>
@@ -167,7 +183,7 @@ export default function ProjectDetailPage({ project, related }) {
 
       {/* Related projects */}
       {related && related.length > 0 && (
-        <section className="bg-[var(--neutral-100)] py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <div className="max-w-6xl mx-auto px-4 lg:px-6">
             <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
               <div>

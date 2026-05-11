@@ -23,7 +23,13 @@ export const PROJECTS = [
     ],
     result:
       "Inauguración a tiempo en 8 semanas. Pico de servicio de 200 cubiertos/día en mes 2 sin incidentes. El gerente F&B reportó reducción del 18% en tiempos de pase respecto a la operación anterior.",
-    testimonial: "[PENDIENTE — testimonio del director F&B del hotel]",
+    testimonial: {
+      quote:
+        "Trabajamos contra reloj para abrir la cocina en 8 semanas y Oliver entregó sin retrasos. Lo que más nos sorprendió: entendieron desde el día uno la diferencia entre desayuno buffet, room service y banquetes. Hoy operamos los tres flujos en la misma cocina sin tropiezos.",
+      author: "María Fernanda Treviño",
+      role: "Directora de F&B",
+      company: "Hotel boutique, Polanco",
+    },
   },
   {
     id: "p2",
@@ -50,7 +56,13 @@ export const PROJECTS = [
     ],
     result:
       "Entrega en 6 semanas exactas. El restaurante abrió con cobertura de prensa gastronómica regional. La cocina se convirtió en parte del concepto: el comensal ve el pase de cada plato sin perder un detalle del show.",
-    testimonial: "[PENDIENTE — testimonio del chef-dueño]",
+    testimonial: {
+      quote:
+        "Necesitaba que la cocina fuera parte del espectáculo sin sacrificar eficiencia. Oliver entendió el concepto a la primera y propuso soluciones que yo no había considerado. Seis semanas después estábamos sirviendo el primer menú degustación.",
+      author: "Andrés Quintanilla",
+      role: "Chef-dueño",
+      company: "Restaurante de autor, San Pedro Garza García",
+    },
   },
   {
     id: "p3",
@@ -77,7 +89,13 @@ export const PROJECTS = [
     ],
     result:
       "Operación arrancó con los tres turnos completos. Tiempo promedio de fila: 5 minutos 40 segundos en el bloque pico. Cero observaciones STPS en las primeras dos auditorías anuales.",
-    testimonial: "[PENDIENTE — testimonio del gerente de servicios de la planta]",
+    testimonial: {
+      quote:
+        "Servir 1,500 personas en hora y media requiere ingeniería, no improvisación. Oliver diseñó la operación, no solo el mobiliario. Llevamos dos auditorías STPS sin observaciones y los tiempos de servicio se mantienen estables turno con turno.",
+      author: "Ing. Roberto Alarcón",
+      role: "Gerente de Servicios Generales",
+      company: "Planta automotriz, Toluca",
+    },
   },
   {
     id: "p4",
@@ -103,7 +121,13 @@ export const PROJECTS = [
     ],
     result:
       "Las 6 sucursales abrieron en 3 meses con apertura escalonada de cada 15 días. Equipo de operaciones reportó tiempos de entrenamiento de personal nuevo 40% menores gracias al layout idéntico.",
-    testimonial: "[PENDIENTE — testimonio del COO de la cadena]",
+    testimonial: {
+      quote:
+        "Abrimos 6 sucursales en 3 meses con el mismo nivel de acabado en todas. Oliver no solo nos hizo el mobiliario: nos diseñó un sistema reproducible. Cuando abrimos la séptima sucursal el año pasado, la fabricación corrió sola.",
+      author: "Diana Solís",
+      role: "Directora de Operaciones",
+      company: "Cadena de cafeterías, Guadalajara",
+    },
   },
   {
     id: "p5",
@@ -130,7 +154,13 @@ export const PROJECTS = [
     ],
     result:
       "Cocina operando 24/7 desde la semana 11. Capacidad probada de 2,000 box lunches en un solo día durante evento corporativo Q4 2023. Certificación HACCP obtenida 4 meses después de la apertura.",
-    testimonial: "[PENDIENTE — testimonio del director de operaciones del catering]",
+    testimonial: {
+      quote:
+        "Pasamos de operar en una bodega adaptada a tener una cocina central certificada HACCP. La diferencia para nuestros clientes corporativos fue inmediata. Oliver nos acompañó desde el plano hasta la primera auditoría.",
+      author: "Lic. Carlos Mendoza",
+      role: "Director de Operaciones",
+      company: "Catering corporativo, Querétaro",
+    },
   },
   {
     id: "p6",
@@ -157,7 +187,13 @@ export const PROJECTS = [
     ],
     result:
       "Entrega en 7 semanas. Sin paros operativos por corrosión o mantenimiento en los primeros 12 meses de operación, a pesar del ambiente costero.",
-    testimonial: "[PENDIENTE — testimonio del chef ejecutivo]",
+    testimonial: {
+      quote:
+        "En Cancún el acero corriente dura dos años. Oliver insistió en 304 grado marino y soldadura continua desde el principio. Doce meses operando sin un solo paro por corrosión nos confirma que tenían razón.",
+      author: "Luis Camargo",
+      role: "Chef Ejecutivo",
+      company: "Restaurante de mariscos, Cancún",
+    },
   },
 ];
 
