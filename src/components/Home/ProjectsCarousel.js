@@ -44,7 +44,7 @@ export default function ProjectsCarousel() {
 
         <div ref={scrollerRef} className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 -mx-4 px-4 lg:mx-0 lg:px-0" tabIndex={0} aria-label="Lista de proyectos">
           {PROJECTS.map((p) => (
-            <Link key={p.id} href="/proyectos" className="group flex-shrink-0 w-[85%] sm:w-[60%] lg:w-[32%] snap-start bg-white rounded-lg overflow-hidden border border-[var(--neutral-200)] hover:shadow-xl transition-shadow">
+            <Link key={p.id} href={`/proyectos/${p.id}`} className="group flex-shrink-0 w-[85%] sm:w-[60%] lg:w-[32%] snap-start bg-white rounded-lg overflow-hidden border border-[var(--neutral-200)] hover:shadow-xl transition-shadow">
               <div className="relative aspect-[4/3] overflow-hidden bg-[var(--oliver-navy-deep)]">
                 <Image src={IMAGES[p.image]} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 32vw" />
                 <span className="absolute top-3 left-3 px-3 py-1 bg-white/95 text-[var(--oliver-navy)] text-xs font-semibold rounded-full uppercase tracking-wider">{p.type}</span>

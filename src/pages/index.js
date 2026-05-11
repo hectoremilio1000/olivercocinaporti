@@ -17,6 +17,9 @@ export default function HomePage() {
       <Head>
         <title>{SITE.name} — {SITE.tagline}</title>
         <meta name="description" content={SITE.description} />
+        <meta property="og:title" content={`${SITE.name} — ${SITE.tagline}`} />
+        <meta property="og:description" content={SITE.description} />
+        <meta property="og:url" content={SITE.url} />
       </Head>
       <Hero />
       <PillarsGrid />

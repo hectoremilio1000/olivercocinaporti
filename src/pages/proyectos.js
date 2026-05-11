@@ -15,6 +15,9 @@ export default function ProyectosPage() {
       <Head>
         <title>Proyectos — {SITE.name}</title>
         <meta name="description" content="Casos reales de cocinas industriales diseñadas, fabricadas e instaladas por Oliver." />
+        <meta property="og:title" content={`Proyectos — ${SITE.name}`} />
+        <meta property="og:description" content="Casos reales de cocinas industriales diseñadas, fabricadas e instaladas por Oliver." />
+        <meta property="og:url" content={`${SITE.url}/proyectos`} />
       </Head>
       <PageHero eyebrow="Casos reales" title="Proyectos entregados" subtitle="Una selección de cocinas que hemos diseñado, fabricado e instalado para restaurantes, hoteles y comedores." image="workshop" />
 
@@ -26,7 +29,7 @@ export default function ProyectosPage() {
             {PROJECTS.map((p) => (
               <Link
                 key={p.id}
-                href="#"
+                href={`/proyectos/${p.id}`}
                 className="group bg-white rounded-lg overflow-hidden border border-[var(--neutral-200)] hover:shadow-xl transition-shadow"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[var(--oliver-navy-deep)]">

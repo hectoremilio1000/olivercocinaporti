@@ -12,6 +12,9 @@ export default function ServiciosPage() {
       <Head>
         <title>Servicios — {SITE.name}</title>
         <meta name="description" content="Cocinas industriales para restaurantes, hoteles, comedores, cafeterías y más." />
+        <meta property="og:title" content={`Servicios — ${SITE.name}`} />
+        <meta property="og:description" content="Cocinas industriales para restaurantes, hoteles, comedores, cafeterías y más." />
+        <meta property="og:url" content={`${SITE.url}/servicios`} />
       </Head>
       <PageHero eyebrow="Servicios" title="Soluciones para cada operación" subtitle="Cubrimos cada formato gastronómico con la misma calidad de ingeniería y fabricación." image="industrial" />
       <PillarsGrid />

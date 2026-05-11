@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check, ArrowRight } from "lucide-react";
 import CTAButton from "@/components/shared/CTAButton";
 import { IMAGES } from "@/data/images";
+import { CONTACT } from "@/data/site";
 
 const BULLETS = [
   "Acero inoxidable 304 grado alimentario",
@@ -11,7 +12,8 @@ const BULLETS = [
   "Garantía 5 años en fabricación",
 ];
 
-export default function ManufacturingSection() {
+export default function ManufacturingSection({ onPage = false }) {
+  const waUrl = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent("Hola, me interesa fabricar mobiliario en acero inoxidable a medida.")}`;
   return (
     <section className="py-20 lg:py-28 bg-[var(--neutral-100)]">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -30,7 +32,11 @@ export default function ManufacturingSection() {
               </li>
             ))}
           </ul>
-          <CTAButton href="/fabricacion" variant="primary" size="md">Conoce nuestra capacidad <ArrowRight size={16} /></CTAButton>
+          {onPage ? (
+            <CTAButton href={waUrl} variant="whatsapp" size="md" external>Cotizar fabricación por WhatsApp <ArrowRight size={16} /></CTAButton>
+          ) : (
+            <CTAButton href="/fabricacion" variant="primary" size="md">Conoce nuestra capacidad <ArrowRight size={16} /></CTAButton>
+          )}
         </div>
       </div>
     </section>
