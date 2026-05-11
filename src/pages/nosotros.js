@@ -15,6 +15,9 @@ export default function NosotrosPage() {
       <Head>
         <title>Nosotros — {SITE.name}</title>
         <meta name="description" content="25 años fabricando cocinas industriales en México. Equipo de ingenieros y diseñadores especializados." />
+        <meta property="og:title" content={`Nosotros — ${SITE.name}`} />
+        <meta property="og:description" content="25 años fabricando cocinas industriales en México. Equipo de ingenieros y diseñadores especializados." />
+        <meta property="og:url" content={`${SITE.url}/nosotros`} />
       </Head>
       <PageHero eyebrow="Quiénes somos" title="25 años cocinando proyectos" subtitle="Un equipo mexicano de ingenieros, diseñadores y fabricantes especializados en cocinas industriales." image="workshop" />
 

@@ -11,9 +11,12 @@ export default function FabricacionPage() {
       <Head>
         <title>Fabricación — {SITE.name}</title>
         <meta name="description" content="Fabricación propia en acero inoxidable 304 a la medida. Garantía 5 años." />
+        <meta property="og:title" content={`Fabricación — ${SITE.name}`} />
+        <meta property="og:description" content="Fabricación propia en acero inoxidable 304 a la medida. Garantía 5 años." />
+        <meta property="og:url" content={`${SITE.url}/fabricacion`} />
       </Head>
       <PageHero eyebrow="Capacidad" title="Fabricación en acero inoxidable" subtitle="Taller propio. Acero 304 grado alimentario. Soldadura sanitaria. Hecho a la medida." image="manufacturing" />
-      <ManufacturingSection />
+      <ManufacturingSection onPage />
       <WhyOliver />
       <ContactSection />
     </>

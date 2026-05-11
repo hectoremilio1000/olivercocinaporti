@@ -18,7 +18,7 @@ export default function ServicesGrid() {
           {SERVICES.map((s) => (
             <Link
               key={s.id}
-              href="/servicios"
+              href={`/servicios/${s.id}`}
               className="group relative overflow-hidden rounded-lg bg-[var(--oliver-navy-deep)] aspect-[4/5]"
             >
               <Image

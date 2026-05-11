@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check, ArrowRight } from "lucide-react";
 import CTAButton from "@/components/shared/CTAButton";
 import { IMAGES } from "@/data/images";
+import { CONTACT } from "@/data/site";
 
 const BULLETS = [
   "Layout funcional para tu menú real",
@@ -11,7 +12,8 @@ const BULLETS = [
   "Presupuesto realista, sin sorpresas",
 ];
 
-export default function AdvisorySection() {
+export default function AdvisorySection({ onPage = false }) {
+  const waUrl = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent("Hola, quisiera agendar una asesoría para mi cocina.")}`;
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -30,7 +32,11 @@ export default function AdvisorySection() {
               </li>
             ))}
           </ul>
-          <CTAButton href="/asesoria" variant="primary" size="md">Agenda una asesoría <ArrowRight size={16} /></CTAButton>
+          {onPage ? (
+            <CTAButton href={waUrl} variant="whatsapp" size="md" external>Agenda por WhatsApp <ArrowRight size={16} /></CTAButton>
+          ) : (
+            <CTAButton href="/asesoria" variant="primary" size="md">Agenda una asesoría <ArrowRight size={16} /></CTAButton>
+          )}
         </div>
       </div>
     </section>

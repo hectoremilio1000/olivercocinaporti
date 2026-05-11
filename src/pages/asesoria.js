@@ -11,9 +11,12 @@ export default function AsesoriaPage() {
       <Head>
         <title>Asesoría — {SITE.name}</title>
         <meta name="description" content="Asesoría especializada en cocinas industriales: layout, normativa, equipos y flujos." />
+        <meta property="og:title" content={`Asesoría — ${SITE.name}`} />
+        <meta property="og:description" content="Asesoría especializada en cocinas industriales: layout, normativa, equipos y flujos." />
+        <meta property="og:url" content={`${SITE.url}/asesoria`} />
       </Head>
       <PageHero eyebrow="Servicio" title="Asesoría especializada" subtitle="Te acompañamos desde la idea hasta el primer servicio. Cocinas pensadas para tu operación real." image="advisory" />
-      <AdvisorySection />
+      <AdvisorySection onPage />
       <ProcessTimeline />
       <ContactSection />
     </>

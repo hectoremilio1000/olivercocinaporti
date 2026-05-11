@@ -9,6 +9,9 @@ export default function ContactoPage() {
       <Head>
         <title>Contacto — {SITE.name}</title>
         <meta name="description" content="Cuéntanos de tu proyecto. Te respondemos en menos de 24 hrs hábiles." />
+        <meta property="og:title" content={`Contacto — ${SITE.name}`} />
+        <meta property="og:description" content="Cuéntanos de tu proyecto. Te respondemos en menos de 24 hrs hábiles." />
+        <meta property="og:url" content={`${SITE.url}/contacto`} />
       </Head>
       <PageHero eyebrow="Conversemos" title="Cuéntanos de tu proyecto" subtitle="Te respondemos en menos de 24 horas hábiles con una propuesta inicial." image="advisory" />
       <ContactSection />

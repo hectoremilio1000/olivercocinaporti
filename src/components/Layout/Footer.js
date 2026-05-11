@@ -22,9 +22,9 @@ export default function Footer() {
             Diseño, fabricación e instalación de cocinas industriales en acero inoxidable.
           </p>
           <div className="flex gap-4 text-lg">
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[var(--oliver-blue-light)]"><FaInstagram /></a>
-            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[var(--oliver-blue-light)]"><FaFacebookF /></a>
-            <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-[var(--oliver-blue-light)]"><FaLinkedinIn /></a>
+            {SOCIAL.instagram && <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[var(--oliver-blue-light)]"><FaInstagram /></a>}
+            {SOCIAL.facebook && <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[var(--oliver-blue-light)]"><FaFacebookF /></a>}
+            {SOCIAL.linkedin && <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-[var(--oliver-blue-light)]"><FaLinkedinIn /></a>}
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-widest mb-4">Servicios</h3>
           <ul className="space-y-2 text-sm text-white/80">
             {SERVICES.map((s) => (
-              <li key={s.id}><Link href="/servicios" className="hover:text-white">{s.title}</Link></li>
+              <li key={s.id}><Link href={`/servicios/${s.id}`} className="hover:text-white">{s.title}</Link></li>
             ))}
           </ul>
         </div>
@@ -62,8 +62,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <p>© {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.</p>
           <div className="flex gap-4">
-            <Link href="/contacto" className="hover:text-white">Aviso de privacidad</Link>
-            <Link href="/contacto" className="hover:text-white">Términos</Link>
+            <Link href="/aviso-privacidad" className="hover:text-white">Aviso de privacidad</Link>
+            <Link href="/terminos" className="hover:text-white">Términos</Link>
           </div>
         </div>
       </div>
