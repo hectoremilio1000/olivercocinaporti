@@ -52,8 +52,8 @@ export default function ServiceDetailPage({ service }) {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href={waUrl} variant="whatsapp" size="md" external>Cotizar por WhatsApp</CTAButton>
-              <CTAButton href="/contacto" variant="secondary" size="md">Solicitar propuesta <ArrowRight size={16} /></CTAButton>
+              <CTAButton href="/contacto" variant="primary" size="md">Cotiza este servicio <ArrowRight size={16} /></CTAButton>
+              <CTAButton href={waUrl} variant="whatsapp" size="md" external>Escríbenos por WhatsApp</CTAButton>
             </div>
           </div>
         </div>
